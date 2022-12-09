@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<script src="jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="echarts.js"></script>
+	</head>
+
+	<body>
+		<div id="main" style="height: 400px;"></div>
+
+	</body>
+	<style>
+		
+		body{
+			padding: 0px;
+			margin: 0px;
+		}
+		
+	</style>
+	<script type="text/javascript" >
+//		changePieData()
+let as = getQueryString("idenNo")
+	let bs =getQueryString("url")
+	let cs = getQueryString("token")
+		changePieData(as,bs,cs)
+
+		function changePieData(a,b,c) {
+			var formData = new FormData()
+			formData.append('idenNo', a)
+			$.ajax({
+				url: b,
+				type: "POST",
+				data: formData,
+				dataType: 'json',
+				processData: false,
+				contentType:false,
+				headers: {
+					"X-Access-Token":c
+				},
+				success: function(res) {
+					if(res.success) {
+						console.log(res)
+//						 let graph = res.result
+						var mychart = echarts.init(document.getElementById('main'));
+
+						mychart.setOption({
+						color: ['#0700fb','#fac859'],
+            xAxis: {
+              type: 'category',
+              data: res.result.month,
+            },
+            legend: {
+                data: ['流入', '流出']
+              },
+              tooltip: {
+                trigger: 'axis'
+              },
+            grid: {
+							top: '15%',
+              left: '0%',
+              right: '0%',
+              bottom: '0%',
+              containLabel: true,
+            },
+            yAxis: {
+              type: 'value',
+            },
+            series: [
+              {name: '流入',
+                data: res.result.lr,
+                type: 'line',
+              },{
+              	name: '流出',
+                data: res.result.lc,
+                type: 'line',
+              },
+            ],
+
+						});
+
+						mychart.setOption(option);
+					} else {
+						alert(res.message)
+					}
+				}
+			})
+
+		}
+		
+		function getQueryString(name) { 
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]); 
+        return null; 
+    } 
+	</script>
+
+</html>

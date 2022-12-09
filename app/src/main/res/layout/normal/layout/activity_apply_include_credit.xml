@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.inclusive.finance.bean.model.ApplyModel" />
+        <variable
+            name="dataType"
+            type="com.inclusive.finance.bean.TooBarBean" />
+        <variable
+            name="presenterClick"
+            type="com.inclusive.finance.interfaces.PresenterClick" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_60"
+        android:orientation="horizontal"
+         android:gravity="center_vertical"
+        android:paddingBottom="@dimen/dp_5">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            />
+        <com.flyco.roundview.RoundLinearLayout
+            android:id="@+id/bt_shoucang"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:onClick="@{(v)->presenterClick.onClick(v)}"
+            android:layout_marginRight="@dimen/dp_22"
+            android:layout_alignParentRight="true"
+            app:rv_backgroundColor="@{data.applyCheckBean.bdqzCheck?@color/color_main_green:@color/white}"
+            app:rv_cornerRadius="@dimen/dp_22">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的收藏"
+                android:textColor="@{data.applyCheckBean.bdqzCheck?@color/white:@color/Black}"
+                android:textSize="@dimen/sp_16"
+                />
+        </com.flyco.roundview.RoundLinearLayout>
+        <com.flyco.roundview.RoundLinearLayout
+            android:id="@+id/bt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:onClick="@{(v)->presenterClick.onClick(v)}"
+            android:layout_marginRight="@dimen/dp_22"
+            android:layout_alignParentRight="true"
+            app:rv_backgroundColor="@{data.applyCheckBean.cwjbCheck?@color/color_main_green:@color/white}"
+            app:rv_cornerRadius="@dimen/dp_22">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索历史"
+                android:textColor="@{data.applyCheckBean.cwjbCheck?@color/white:@color/Black}"
+                android:textSize="@dimen/sp_16"
+                />
+        </com.flyco.roundview.RoundLinearLayout>
+        <com.flyco.roundview.RoundLinearLayout
+            android:id="@+id/bt_fiel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:onClick="@{(v)->presenterClick.onClick(v)}"
+            android:layout_marginRight="@dimen/dp_22"
+            android:layout_alignParentRight="true"
+            app:rv_backgroundColor="@{data.applyCheckBean.csjgCheck?@color/color_main_green:@color/white}"
+            app:rv_cornerRadius="@dimen/dp_22">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标准文件管理"
+                android:textColor="@{data.applyCheckBean.csjgCheck?@color/white:@color/Black}"
+
+                android:textSize="@dimen/sp_16"
+                />
+        </com.flyco.roundview.RoundLinearLayout>
+        <com.flyco.roundview.RoundLinearLayout
+            android:id="@+id/bt_system"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:onClick="@{(v)->presenterClick.onClick(v)}"
+            android:layout_marginRight="@dimen/dp_22"
+            android:layout_alignParentRight="true"
+            app:rv_backgroundColor="@{data.applyCheckBean.dcbgCheck?@color/color_main_green:@color/white}"
+
+            app:rv_cornerRadius="@dimen/dp_22">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统管理"
+                android:textColor="@{data.applyCheckBean.dcbgCheck?@color/white:@color/Black}"
+                android:textSize="@dimen/sp_16"
+                />
+        </com.flyco.roundview.RoundLinearLayout>
+    </LinearLayout>
+</layout>

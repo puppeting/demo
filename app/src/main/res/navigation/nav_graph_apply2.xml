@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/navigation_ApplyPwdFragment">
+    <!--空白页-->
+    <fragment
+        android:id="@+id/EmptyFragment"
+        android:name="com.inclusive.finance.ui.EmptyFragment"
+        android:label="EmptyFragment"
+        tools:layout="@layout/fragment_empty" />
+    <fragment
+        android:id="@+id/navigation_applyList"
+        android:name="com.inclusive.finance.ui.ApplyListFragment"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ShouCangListFragment"
+        android:name="com.inclusive.finance.ui.ShouCangListFragment"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ApplyWenJiantFragment"
+        android:name="com.inclusive.finance.ui.ApplyWenJiantFragment"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ApplyPwdFragment"
+        android:name="com.inclusive.finance.ui.ApplyPwdFragment"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ApplyLishiFragment"
+        android:name="com.inclusive.finance.ui.ApplyLishiFragment"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <!--    android:label="单页"-->
+    <activity
+        android:id="@+id/navigation_navActivity"
+        android:name="com.inclusive.finance.ui.NavActivity"
+        tools:layout="@layout/activity_graph_nav" />
+
+</navigation>

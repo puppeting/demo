@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/navigation_main">
+    <!--    android:label="客户信息"-->
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.inclusive.finance.ui.MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_to_applyList"
+            app:destination="@+id/navigation_applyList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_applyList2"
+            app:destination="@+id/navigation_applyList2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ApplyWenJiantFragment"
+            app:destination="@+id/navigation_ApplyWenJiantFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ShouCangListFragment"
+            app:destination="@+id/navigation_ShouCangListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ApplyPwdFragment"
+            app:destination="@+id/navigation_ApplyPwdFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ApplyLishiFragment"
+            app:destination="@+id/navigation_ApplyLishiFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_SunShine_applyList"
+            app:destination="@+id/navigation_applyList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_investigationList"
+            app:destination="@+id/navigation_investigationList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_creditApproval"
+            app:destination="@+id/navigation_creditApproval"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_sunshineCreditApproval"
+            app:destination="@+id/navigation_creditApproval2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_creditApproval2"
+            app:destination="@+id/navigation_creditApproval2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_dh_creditApproval2"
+            app:destination="@+id/navigation_creditApproval2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_creditApproval3"
+            app:destination="@+id/navigation_creditApproval3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_SignApproval"
+            app:destination="@+id/navigation_creditApproval"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_sunshineSignApproval"
+            app:destination="@+id/navigation_creditApproval"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_creditListFragment"
+            app:destination="@+id/navigation_creditListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_jiNianJianCaiJiListFragment"
+            app:destination="@+id/navigation_jiNianJianCaiJiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_XinXiYuanListFragment"
+            app:destination="@+id/navigation_XinXiYuanListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_FengxianxinxiFragment"
+            app:destination="@+id/navigation_FengxianxinxiFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_DataMapFragment"
+            app:destination="@+id/navigation_DataMapFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_JiNianJianYongXinListFragment"
+            app:destination="@+id/navigation_JiNianJianYongXinListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_feiXianchangJianYanListFragment"
+            app:destination="@+id/navigation_jiNianJianFeiXianChangJianChaListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_XianchangJianYanListFragment"
+            app:destination="@+id/navigation_jiNianJianXianChangJianChaListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ShouJianListFragment"
+            app:destination="@+id/navigation_shouJianListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_RiChangXianchangJianYanListFragment"
+            app:destination="@+id/navigation_riChangXianChangListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_RiChangFeiXianchangJianYanListFragment"
+            app:destination="@+id/navigation_riChangFeiXianChangListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_RiChangJianYanListFragment"
+            app:destination="@+id/navigation_RiChangJianListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_LeaveApprovalListFragment"
+            app:destination="@+id/navigation_LeaveApprovalListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_VisitListFragment"
+            app:destination="@+id/navigation_VisitListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_PreCreditFragment"
+            app:destination="@+id/navigation_PreCreditFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_SunPreCreditTaskFragment"
+            app:destination="@+id/navigation_SunPreCreditTaskFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_VisitApprovalFragment"
+            app:destination="@+id/navigation_VisitApprovalFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ClockInListFragment"
+            app:destination="@+id/navigation_ClockInListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_TrackFragment"
+            app:destination="@+id/navigation_TrackFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_PointClusterFragment"
+            app:destination="@+id/navigation_PointClusterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_PicAddListFragment"
+            app:destination="@+id/navigation_PicAddListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_YongXinGuanLiListFragment"
+            app:destination="@+id/navigation_YongXinGuanLiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_QRCodeListFragment"
+            app:destination="@+id/navigation_QRCodeListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ShouLiListFragment"
+            app:destination="@+id/navigation_ShouLiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_WenJuanDiaoChaListFragment"
+            app:destination="@+id/navigation_WenJuanDiaoChaListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ShouXinPingYiListFragment"
+            app:destination="@+id/navigation_ShouXinPingYiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_EDuBiDuiListFragment"
+            app:destination="@+id/navigation_EDuBiDuiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_ShouXinXiangXiaListFragment"
+            app:destination="@+id/navigation_ShouXinXiangXiaListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_HeTongDengJiListFragment"
+            app:destination="@+id/navigation_HeTongDengJiListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_FangDaiShengQingListFragment"
+            app:destination="@+id/navigation_FangDaiShengQingListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_applyActivity2"
+            app:destination="@+id/navigation_applyActivity2" />
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_CustomerPoolListFragment"
+            app:destination="@+id/navigation_CustomerPoolListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_CustomerManagementFragment"
+            app:destination="@+id/navigation_CustomerManagementListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_applyList"
+        android:name="com.inclusive.finance.ui.ApplyListFragment"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_applyList2"
+        android:name="com.inclusive.finance.ui.ApplyListFragment2"
+        tools:layout="@layout/fragment_apply_list">
+
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ShouCangListFragment"
+        android:name="com.inclusive.finance.ui.ShouCangListFragment"
+        tools:layout="@layout/fragment_apply_list">
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ApplyWenJiantFragment"
+        android:name="com.inclusive.finance.ui.ApplyWenJiantFragment"
+        tools:layout="@layout/fragment_apply_list">
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ApplyPwdFragment"
+        android:name="com.inclusive.finance.ui.ApplyPwdFragment"
+        tools:layout="@layout/fragment_apply_list">
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ApplyLishiFragment"
+        android:name="com.inclusive.finance.ui.ApplyLishiFragment"
+        tools:layout="@layout/fragment_apply_list">
+        <action
+            android:id="@+id/action_to_applyActivity"
+            app:destination="@+id/navigation_applyActivity" />
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/navigation_applyActivity2"
+        android:name="com.inclusive.finance.ui.ApplyActivity2"
+        tools:layout="@layout/activity_apply" />
+    <activity
+        android:id="@+id/navigation_applyActivity"
+        android:name="com.inclusive.finance.ui.ApplyActivity"
+        tools:layout="@layout/activity_apply" />
+    <activity
+        android:id="@+id/navigation_navActivity"
+        android:name="com.inclusive.finance.ui.NavActivity"
+        tools:layout="@layout/activity_graph_nav" />
+
+</navigation>

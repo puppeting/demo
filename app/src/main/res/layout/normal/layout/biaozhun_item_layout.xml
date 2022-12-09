@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="helper"
+            type="com.chad.library.adapter.base.viewholder.BaseViewHolder" />
+
+        <variable
+            name="data"
+            type="com.inclusive.finance.room.Standard" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_15"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{data.isClick?@color/color_49a0ed:@color/white}"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="2"
+                android:gravity="center"
+                android:text="@{String.valueOf(helper.adapterPosition+1)}"
+                 android:textSize="12sp"
+                tools:text="序号"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+                 android:gravity="center"
+                android:hint="张三"
+                android:text="@{data.name}"
+                android:padding="@dimen/dp_5"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/Black"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+                  android:gravity="center"
+                android:hint=" "
+                android:text="@{data.status}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+                 android:gravity="center"
+
+                android:text="@{data.releaseTime}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+
+                android:text="@{data.startTime}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+
+                android:text="@{data.TypeNum}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+
+                android:text="@{data.RatifyDepartmentName}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+
+                android:text="@{data.StartDepartmentName}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+
+                android:text="@{data.EditorDepartmentName}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+
+                android:text="@{data.Drafter}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:ems="8"
+                android:layout_height="wrap_content"
+ 
+                android:gravity="center"
+
+                android:text="@{data.Referencesd}"
+                android:padding="@dimen/dp_5"
+                android:textColor="#868686"
+                android:textColorHint="#868686"
+                android:textSize="@dimen/sp_14"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginBottom="@dimen/dp_2"
+            android:background="@drawable/xiahu_line"
+            android:layerType="software" />
+    </LinearLayout>
+</layout>

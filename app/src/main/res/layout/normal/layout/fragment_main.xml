@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.inclusive.finance.bean.model.MainActivityModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/action_bar_custom"
+            layout="@layout/action_bar_custom" />
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_160"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/icon_pdf"
+                    android:layout_marginBottom="@dimen/margin_50"
+                    android:layout_marginTop="@dimen/margin_50"
+                    />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/margin_80"
+                android:layout_marginLeft="@dimen/margin_80"
+                 android:layout_height="wrap_content">
+                <com.flyco.roundview.RoundLinearLayout
+                    android:id="@+id/bt_resg"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                     android:gravity="center"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="6dp"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_alignParentRight="true"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_strokeColor="@color/color_main_green"
+                    app:rv_strokeWidth="1dp"
+                    app:rv_cornerRadius="@dimen/dp_5">
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:text=""
+                        android:background="@color/white"
+                        android:textColor="@color/black_30000000"
+                        android:textSize="@dimen/sp_14" />
+                    <LinearLayout
+                        android:id="@+id/iv_search"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:textColor="@color/color_main_green"
+                        android:gravity="center"
+                         >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_search_black_24dp"
+                            />
+                    </LinearLayout>
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:id="@+id/bt_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                     android:gravity="center"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="26dp"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_alignParentRight="true"
+                    app:rv_backgroundColor="@color/color_main_green"
+                    app:rv_cornerRadius="@dimen/dp_5">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="高级检索"
+                             android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                              />
+                </com.flyco.roundview.RoundLinearLayout>
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</layout>

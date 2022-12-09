@@ -1,0 +1,3 @@
+rootProject.name='XZSInclusiveFinance'
+include ':app'
+include ':text'

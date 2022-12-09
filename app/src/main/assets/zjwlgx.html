@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<script src="jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="echarts.js"></script>
+	</head>
+
+	<body>
+		<div class="zjwlbody">
+			<div id="main" style="height: 400px;"></div>
+			<div class="zjwlbodya">
+				<div class="ant-table-body">
+					<table class="tablsets">
+						<thead class="ant-table-thead">
+							<tr>
+								<th key="khmc" class="ant-table-align-center" style="text-align: center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">客户姓名</span><span class="ant-table-column-sorter"></span></div>
+				</span>
+				</th>
+				<th key="dfjyje" class="ant-table-align-center" style="text-align: center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">贷方交易金额(元)</span><span class="ant-table-column-sorter"></span></div>
+			</span>
+			</th>
+			<th key="jfjyje" class="ant-table-align-center ant-table-row-cell-last" style="text-align: center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">借方交易金额(元)</span><span class="ant-table-column-sorter"></span></div>
+		</span>
+		</th>
+		</tr>
+		</thead>
+		<tbody class="ant-table-tbody">
+			<tr class="zanwusj"> <td colspan="3" >暂无数据</td> </tr>
+			
+		</tbody>
+		</table>
+		</div>
+
+		</div>
+		</div>
+
+	</body>
+	<style>
+		body {
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		.zjwlbody {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		#main {
+			width: 50%;
+			/*border: 1px solid red;*/
+		}
+		
+		.zjwlbodya {
+			width: 45%;
+			/*width: 1px solid blue;*/
+		}
+		
+		.tablsets {
+			border: 1px solid #e8e8e8;
+			border-right: 0;
+			border-bottom: 0;
+			width: 100%;
+			text-align: left;
+			border-radius: 4px 4px 0 0;
+			border-collapse: separate;
+			border-spacing: 0;
+		}
+		.zanwusj {
+		    /*margin: 0 8px;*/
+		    margin: 32px 0;
+    color: rgba(0, 0, 0, 0.25);
+		    font-size: 14px;
+		    line-height: 22px;
+		    text-align: center;
+		}
+		
+		.ant-table-align-center {
+			border-right: 1px solid #e8e8e8;
+			color: rgba(0, 0, 0, 0.85);
+			font-weight: 500;
+			text-align: left;
+			background: #fafafa;
+			border-bottom: 1px solid #e8e8e8;
+			-webkit-transition: background 0.3s ease;
+			transition: background 0.3s ease;
+			font-size: 14px;
+			font-variant: tabular-nums;
+			line-height: 1.5;
+			list-style: none;
+			padding: 12px 8px;
+		}
+		tr{
+			border-bottom: 1px solid #e8e8e8;
+		}
+		.ant-table-tbody {
+			color: rgba(0, 0, 0, 0.65);
+			font-size: 14px;
+			font-variant: tabular-nums;
+			line-height: 1.5;
+			list-style: none;
+		}
+		
+		.ant-table-tbody td {
+			padding: 12px 8px;
+			border-right: 1px solid #e8e8e8;
+			border-bottom: 1px solid #e8e8e8;
+		}
+	</style>
+	<script type="text/javascript">
+			let as = getQueryString("idenNo")
+			let bs =getQueryString("url")
+		let cs = getQueryString("token")
+//		let bs = "http://192.168.3.73:8020/jeecg-boot/yxxt/khhx/queryZjwl"
+//		let as = "320321198808203812"
+//		let cs = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Mzk1MzIwMTUsInVzZXJuYW1lIjoiYWRtaW4ifQ.6vZvp4Nwdzd1JS1QzRq_2NQzQRAvKcnEYrqh99aYoFE"
+
+		changePieData(as, bs, cs)
+		//console.log(22)
+		function changePieData(a, b, c) {
+			//			alert(a,b,c )
+			var formData = new FormData()
+			formData.append('idenNo', a)
+			$.ajax({
+				url: b,
+				type: "POST",
+				data: formData,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				headers: {
+					"X-Access-Token": c
+				},
+				success: function(res) {
+					if(res.success) {
+						//						alert("55")
+						console.log(res)
+						
+						if( res.result.list.length>0 ){
+//							
+							$(".ant-table-tbody").html("")
+							for( let i=0;i<res.result.list.length;i++ ){
+								let shuju = `<tr><td class="" style="text-align: center;">`+res.result.list[i].khmc+`</td>
+														<td class="" style="text-align: center;">`+res.result.list[i].dfjyje+`</td>
+														<td class="" style="text-align: center;">`+res.result.list[i].jfjyje+`</td></tr>`
+														
+								$(".ant-table-tbody").append(shuju)
+							}
+						}
+						
+						
+						let graph = res.result
+						var mychart = echarts.init(document.getElementById('main'));
+
+						mychart.setOption({
+							color: ['#5570c7', '#92cc77', '#fac859', '#ee6666', '#71c0de', '#3ba372', '#fc8452', '#9a60b4', '#e97ccb'],
+							tooltip: {},
+							legend: [{
+								// selectedMode: 'single',
+								data: graph.categories.map(function(a) {
+									console.log(a)
+									return a.name
+								}),
+							}, ],
+							tooltip: {
+								trigger: 'item',
+								formatter: function(params) {
+									console.log(params)
+									if(typeof params.data.je != 'undefined') {
+										return params.data.je
+									}
+								},
+							},
+							animationDuration: 1200,
+							animationEasingUpdate: 'quinticInOut',
+
+							series: [{
+								name: '担保关系',
+								type: 'graph',
+								layout: 'circular',
+								data: res.result.nodes,
+								links: res.result.links,
+								categories: res.result.categories,
+								roam: false,
+								force: {
+									repulsion: 500,
+									edgeLength: 200,
+								},
+								label: {
+									show: true,
+									position: 'right',
+									formatter: '{b}',
+								},
+								edgeSymbol: ['circle', 'arrow'],
+								emphasis: {
+									focus: 'adjacency',
+									lineStyle: {
+										width: 10,
+									},
+								},
+								lineStyle: {
+									color: 'source',
+									curveness: 0.1,
+								},
+							}, ],
+
+						});
+
+						//						mychart.setOption(option);
+					} else {
+						alert(res.message)
+					}
+				}
+			})
+
+		}
+
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) return unescape(r[2]);
+			return null;
+		}
+	</script>
+
+</html>

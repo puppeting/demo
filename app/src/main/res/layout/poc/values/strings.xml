@@ -1,0 +1,15 @@
+<resources>
+    <string name="LITERATURE">标准信息智能检索</string>
+    <string name="super_search">高级检索</string>
+    <string name="mess_zhankai">展开</string>
+    <string name="mess_shouqi">收起</string>
+    <string name="resg">注册</string>
+    <string name="update">修改</string>
+    <string name="commit">提交</string>
+    <string name="shoucang">收藏</string>
+    <string name="title_user">用户管理</string>
+    <string name="title_depart">标准来源管理</string>
+    <string name="title_bzfl">标准分类管理</string>
+    <string name="houqin">后勤保障部</string>
+    <string name="userhelp">用户中心</string>
+</resources>

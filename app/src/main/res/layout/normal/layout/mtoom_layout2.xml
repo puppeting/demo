@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.UserInfoTwoActivity">
+        <include
+            android:id="@+id/action_bar_custom"
+            layout="@layout/action_bar_custom" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayPhone"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:theme="@style/EditPersonInfoInputStyle"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/ed_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入身份证"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textColorHint="#646464"
+                    android:textSize="@dimen/sp_16" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayPwd"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 app:layout_constraintEnd_toEndOf="@+id/textInputLayPhone"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayPhone"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayPhone"
+                 app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/ed_Pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入机构号"
+                     android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textColorHint="#646464"
+                    android:textSize="@dimen/sp_16" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:id="@+id/bt_login_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                 android:paddingStart="56dp"
+                android:paddingEnd="56dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayPwd"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayPwd"
+                app:rv_backgroundColor="#f29400"
+                android:background="#f29400"
+                app:rv_cornerRadius="@dimen/margin_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="跳转"
+
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

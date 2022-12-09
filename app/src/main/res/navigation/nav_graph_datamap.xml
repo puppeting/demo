@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_datamap"
+    app:startDestination="@id/DataMapFragment"
+    >
+    <fragment
+        android:id="@+id/DataMapFragment"
+        android:name="com.inclusive.finance.ui.DataMapFragment"
+        android:label="dataMapFragment"
+        tools:layout="@layout/fragment_data_map">
+        <action
+            android:id="@+id/action_jian_to_TownFragment"
+            app:destination="@id/TownFragment" />
+        <action
+            android:id="@+id/action_jian_to_VillageListFragment"
+            app:destination="@id/VillageListFragment" />
+
+    </fragment>
+    <!--    -->
+    <fragment
+            android:id="@+id/TownFragment"
+            android:name="com.inclusive.finance.ui.TownFragment"
+            android:label="townFragment"
+            tools:layout="@layout/fragment_town_info">
+        <action
+            android:id="@+id/action_jian_to_VillageListFragment"
+            app:destination="@id/VillageListFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/VillageListFragment"
+        android:name="com.inclusive.finance.VillageListFragment"
+        android:label="villageListFragment"
+        tools:layout="@layout/fragment_village_list">
+        <action
+            android:id="@+id/action_jian_to_VillageFragment"
+            app:destination="@id/VillageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/VillageFragment"
+        android:name="com.inclusive.finance.ui.VillageFragment"
+        android:label="villageFragment"
+        tools:layout="@layout/fragment_village_info">
+        <action
+            android:id="@+id/action_jian_to_CunRenYuanListFragment"
+            app:destination="@id/CunRenYuanListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CunRenYuanListFragment"
+        android:name="com.inclusive.finance.ui.CunRenYuanListFragment"
+        android:label="cunRenYuanListFragment"
+        tools:layout="@layout/fragment_cun_renyuan_list">
+
+    </fragment>
+</navigation>

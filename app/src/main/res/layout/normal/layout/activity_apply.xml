@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.ApplyActivity">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.inclusive.finance.bean.model.ApplyModel" />
+
+        <variable
+            name="presenterClick"
+            type="com.inclusive.finance.interfaces.PresenterClick" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/title_bg"
+        android:orientation="vertical">
+        <!--引入的部分-->
+        <View
+            android:id="@+id/view_overlay"
+             android:layout_width="wrap_content"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/title_bg"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleEnabled="false">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    app:contentInsetEndWithActions="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
+                    app:navigationIcon="@drawable/tool_arrow_back_black_24dp"
+                    app:title="授信申请"
+                    app:titleMargin="0dp"
+                    app:titleTextAppearance="@style/Toolbar.TitleText"
+                    app:titleTextColor="@color/color_text_title">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:orientation="horizontal"
+                        android:gravity="center|right">
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:layout_marginEnd="@dimen/dp_20"
+                            android:layout_marginBottom="@dimen/dp_18"
+                            android:background="@color/line"
+                            />
+
+                        <HorizontalScrollView
+                            android:id="@+id/titleButtonLay"
+                            android:layout_width="wrap_content"
+                             android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:overScrollMode="never"
+                            android:scrollbars="none"
+                             >
+
+                            <ViewStub
+                                android:id="@+id/titleMenuViewStub"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+                        </HorizontalScrollView>
+
+
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--引入的部分-->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/apply_nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            />
+<!--            app:navGraph="@navigation/nav_graph_apply" />-->
+
+    </LinearLayout>
+</layout>

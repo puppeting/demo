@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="fxdt.js"></script>
+		<script type="text/javascript" src="echarts.js"></script>
+	</head>
+
+	<body>
+		<div class="khhxzt">
+			<div id="main" style="width: 40%; height: 550px"></div>
+			<div class="khhxztright" style="height: 550px;overflow-y: auto;">
+				<div class="khhxztright_title">
+					<table class="listlb" width="100%" border="1" align="center">
+						<thead>
+							<tr>
+								<td class="title">镇名</td>
+								<td class="title">总人口(人)</td>
+								<td class="title">我行客户数(人)</td>
+								<td class="title">存款余额(万元)</td>
+								<td class="title">贷款余额(万元)</td>
+							</tr>
+						</thead>
+						<tbody id="sjdt" >
+							<!--<tr v-for="(item,index) in zhenlist " :key="index" >
+                <td>{{item.zhenName}}</td>
+                <td>{{item.rks}}人</td>
+                <td>{{item.whkhs}}人</td>
+                <td>{{item.dqckye}}元</td>
+                <td>{{item.dqzdkye}}元</td>
+              </tr>-->
+						</tbody>
+					</table>
+
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+	<script type="text/javascript">
+		let url = getQueryString("url")
+		let token = getQueryString("token")
+		let zhenlist = []
+		getcans()
+		getzhenlist()
+		function getzhenlist(){
+			$.ajax({
+				url:url,
+				type: "POST",
+				dataType: 'json',
+				processData: false,
+				contentType:false,
+				headers: {
+					"X-Access-Token":token
+				},
+				success: function(res) {
+					if(res.success) {
+						console.log(res)
+						$("#sjdt").html("")
+						zhenlist = res.result
+						
+						for( let i=0;i<res.result.length;i++ ){
+							
+							let sj = `<tr >
+                <td>`+res.result[i].zhenName+`</td>
+                <td>`+res.result[i].rks+`</td>
+                <td>`+res.result[i].whkhs+`</td>
+                <td>`+res.result[i].dqckye+`</td>
+                <td>`+res.result[i].dqzdkye+`</td>
+              </tr>`
+                console.log( sj )
+							$("#sjdt").append(sj)
+						}
+//						sjdt
+						
+					} else {
+						alert(res.message)
+					}
+				}
+			})
+		}
+
+		function getcans() {
+
+			var mychart = echarts.init(document.getElementById('main'));
+<!--			$.getJSON('fxdt.json', function(e) {-->
+<!--				alert(1111)-->
+<!--				console.log(e);-->
+
+				echarts.registerMap('HK', dtjs)
+				mychart.setOption({
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: 0,
+						top: 0
+					},
+					// visualMap: {
+					//   min: 800,
+					//   max: 50000,
+					//   text: ['High', 'Low'],
+					//   realtime: false,
+					//   calculable: true,
+					//   inRange: {
+					//     color: ['lightskyblue', 'yellow', 'orangered'],
+					//   },
+					// },
+					series: [{
+						name: '丰县',
+						type: 'map',
+						map: 'HK',
+						label: {
+							show: true,
+						},
+						layoutCenter: ['40%', '50%'],
+						layoutSize: '110%',
+						data: [{
+								name: '首羡镇',
+								color: 'red',
+								value: 20057.34,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#baebb4',
+										areaColor: '#baebb4',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '顺河镇',
+								color: 'red',
+								value: 15477.48,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#bf7eda',
+										areaColor: '#bf7eda',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '欢口镇',
+								color: 'red',
+								value: 31686.1,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fda871',
+										areaColor: '#fda871',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '赵庄镇',
+								color: 'red',
+								value: 6992.6,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fff09b',
+										areaColor: '#fff09b',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '常店镇',
+								color: 'red',
+								value: 44045.49,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fda871',
+										areaColor: '#fda871',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '师寨镇',
+								color: 'red',
+								value: 40689.64,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fff09b',
+										areaColor: '#fff09b',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '王沟镇',
+								color: 'red',
+								value: 37659.78,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#bf7eda',
+										areaColor: '#bf7eda',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '中阳里街道',
+								color: 'red',
+								value: 45180.97,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#e95798',
+										areaColor: '#e95798',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '凤城镇',
+								color: 'red',
+								value: 55204.26,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#be7edc',
+										areaColor: '#be7edc',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '孙楼街道办事处',
+								color: 'red',
+								value: 21900.9,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#8ecd9e',
+										areaColor: '#8ecd9e',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '华山镇',
+								color: 'red',
+								value: 4918.26,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fda871',
+										areaColor: '#fda871',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '宋楼镇',
+								color: 'red',
+								value: 5881.84,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fcf29b',
+										areaColor: '#fcf29b',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '大沙河林场',
+								color: 'red',
+								value: 4178.01,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fff09b',
+										areaColor: '#fff09b',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '大沙河镇',
+								color: 'red',
+								value: 2227.92,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#8ecd9e',
+										areaColor: '#8ecd9e',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '梁寨镇',
+								color: 'red',
+								value: 2180.98,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#bf7eda',
+										areaColor: '#bf7eda',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+							{
+								name: '范楼镇',
+								color: 'red',
+								value: 9172.94,
+								value1: 20057.34,
+								value2: 20057.34,
+								value3: 20057.34,
+								itemStyle: {
+									normal: {
+										color: '#fff09b',
+										areaColor: '#fff09b',
+										label: {
+											show: true,
+											textStyle: {
+												color: '#fff',
+												fontSize: 15,
+											},
+										},
+									},
+								},
+							},
+						],
+					}, ],
+				})
+			
+<!--			});-->
+			console.log( mychart )
+				mychart.on('click', function(params) {
+					console.log(params.data)
+					for(let i = 0; i < zhenlist.length; i++) {
+						if(zhenlist[i].zhenName == params.data.name) {
+//							alert("111")
+							window.android.getMId(params.data.name)
+						}
+					}
+				})
+			
+			
+		}
+
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) return unescape(r[2]);
+			return null;
+		}
+	</script>
+	<style>
+		html,body{
+			/*border: 1px solid red;*/
+			height: 550px;
+			padding: 0px;
+		}
+		.listlb td {
+			text-align: center;
+			font-size: 13px;
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.65);
+			border-right: solid 1px #e5e5e5;
+			padding: 8px 8px;
+		}
+		
+		.listlb {
+			border: solid 1px #e5e5e5;
+		}
+		
+		.listlb tr {
+			border-bottom: solid 1px #e5e5e5;
+		}
+		
+		.listlb .title {
+			color: rgba(0, 0, 0, 0.85)!important;
+		}
+		
+		.khhxzt {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.khhxztright {
+			width: 55%;
+			padding-top: 20px;
+			box-sizing: border-box;
+		}
+		
+		thead {
+			background-color: #f2f2f2;
+		}
+		
+		tbody {
+			background-color: #ffffff;
+		}
+		
+		table {
+			border-collapse: collapse;
+		}
+	</style>
+
+</html>

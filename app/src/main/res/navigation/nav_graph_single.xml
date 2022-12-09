@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/customerInfoFragment">
+
+     <fragment
+        android:id="@+id/EmptyFragment"
+        android:name="com.inclusive.finance.ui.EmptyFragment"
+        android:label="EmptyFragment"
+        tools:layout="@layout/fragment_empty" />
+    <!--信息概况-->
+    <fragment
+        android:id="@+id/customerInfoFragment"
+        android:name="com.inclusive.finance.ui.FielInfoFragment"
+        android:label="customerInfoFragment"
+        tools:layout="@layout/fragment_customer_info" />
+    <!--信息概况-->
+    <fragment
+        android:id="@+id/UpLoadFragment"
+        android:name="com.inclusive.finance.ui.UpLoadFragment"
+        android:label="customerInfoFragment"
+        tools:layout="@layout/fragment_customer_info" />
+    <activity
+        android:id="@+id/navigation_applyActivity"
+        android:name="com.inclusive.finance.ui.ApplyActivity"
+        tools:layout="@layout/activity_apply" />
+</navigation>
